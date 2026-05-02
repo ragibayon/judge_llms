@@ -1,0 +1,1278 @@
+{
+  "builder_name": "json",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "summeval_pairs",
+  "dataset_size": 13095222,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/KnutJaegersberg/summeval_pairs@bdd83ca3b139f959e3ca12987fb2b111bfa21abd/model_annotations.aligned.paired.scored.jsonl": {
+      "num_bytes": 25796698,
+      "checksum": null
+    }
+  },
+  "download_size": 25796698,
+  "features": {
+    "id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "decoded": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "expert_annotations": {
+      "feature": {
+        "coherence": {
+          "dtype": "int64",
+          "_type": "Value"
+        },
+        "consistency": {
+          "dtype": "int64",
+          "_type": "Value"
+        },
+        "fluency": {
+          "dtype": "int64",
+          "_type": "Value"
+        },
+        "relevance": {
+          "dtype": "int64",
+          "_type": "Value"
+        }
+      },
+      "_type": "List"
+    },
+    "turker_annotations": {
+      "feature": {
+        "coherence": {
+          "dtype": "int64",
+          "_type": "Value"
+        },
+        "consistency": {
+          "dtype": "int64",
+          "_type": "Value"
+        },
+        "fluency": {
+          "dtype": "int64",
+          "_type": "Value"
+        },
+        "relevance": {
+          "dtype": "int64",
+          "_type": "Value"
+        }
+      },
+      "_type": "List"
+    },
+    "references": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "List"
+    },
+    "model_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "filepath": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "metric_scores_1": {
+      "cider": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "s3_pyr": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "s3_resp": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "bleu": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_3_p": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_3_r": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_3_f": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "mover_score": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_2_p": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_2_r": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_2_f": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "chrf": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "summaqa_avg_prob": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "summaqa_avg_fscore": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "coverage": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "density": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "compression": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "summary_length": {
+        "dtype": "int64",
+        "_type": "Value"
+      },
+      "percentage_novel_1-gram": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "percentage_repeated_1-gram_in_summ": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "percentage_novel_2-gram": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "percentage_repeated_2-gram_in_summ": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "percentage_novel_3-gram": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "percentage_repeated_3-gram_in_summ": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "meteor": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge": {
+        "rouge_1_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        }
+      },
+      "sentence_movers_glove_sms": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "bert_score_precision": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "bert_score_recall": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "bert_score_f1": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_1_p": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_1_r": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_1_f": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "blanc": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "supert": {
+        "feature": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "_type": "List"
+      }
+    },
+    "metric_scores_6": {
+      "bert_score_precision": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "bert_score_recall": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "bert_score_f1": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_3_p": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_3_r": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_3_f": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "cider": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "s3_pyr": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "s3_resp": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge": {
+        "rouge_1_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        }
+      },
+      "bleu": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_2_p": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_2_r": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_2_f": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "meteor": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_1_p": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_1_r": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_1_f": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "mover_score": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "chrf": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "sentence_movers_glove_sms": {
+        "dtype": "float64",
+        "_type": "Value"
+      }
+    },
+    "metric_scores_11": {
+      "bert_score_precision": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "bert_score_recall": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "bert_score_f1": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_3_p": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_3_r": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_3_f": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "cider": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "s3_pyr": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "s3_resp": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge": {
+        "rouge_1_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_1_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_2_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_3_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_4_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_l_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_w_1.2_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_s*_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_recall": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_recall_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_recall_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_precision": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_precision_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_precision_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_f_score": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_f_score_cb": {
+          "dtype": "float64",
+          "_type": "Value"
+        },
+        "rouge_su*_f_score_ce": {
+          "dtype": "float64",
+          "_type": "Value"
+        }
+      },
+      "bleu": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_2_p": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_2_r": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_2_f": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "meteor": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_1_p": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_1_r": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "rouge_we_1_f": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "mover_score": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "chrf": {
+        "dtype": "float64",
+        "_type": "Value"
+      },
+      "sentence_movers_glove_sms": {
+        "dtype": "float64",
+        "_type": "Value"
+      }
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 38891920,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 13095222,
+      "num_examples": 1700,
+      "dataset_name": "summeval_pairs"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

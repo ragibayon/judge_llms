@@ -1,4 +1,8 @@
 import re
+import json
+import os
+import urllib.request
+import urllib.error
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -73,15 +77,25 @@ class PrometheusEvaluator:
         device_map: str = "auto",
         torch_dtype: Any = None,
         max_new_tokens: int = 512,
+        api_base: str | None = None,
+        api_key: str = "EMPTY",
     ) -> None:
-        if AutoTokenizer is None or AutoModelForCausalLM is None or torch is None:
-            raise ImportError(
-                "transformers and torch are required to run Prometheus evaluation. "
-                "Install project dependencies first, for example with `uv sync`."
-            )
-
         self.model_id = model_id
         self.max_new_tokens = max_new_tokens
+        self.api_base = (api_base or os.getenv("PROMETHEUS_API_BASE", "")).rstrip("/")
+        self.api_key = api_key or os.getenv("PROMETHEUS_API_KEY", "EMPTY")
+        self.tokenizer = None
+        self.model = None
+
+        if self.api_base:
+            return
+
+        if AutoTokenizer is None or AutoModelForCausalLM is None or torch is None:
+            raise ImportError(
+                "transformers and torch are required for local evaluation, or set "
+                "`PROMETHEUS_API_BASE` to use a remote vLLM server."
+            )
+
         self.tokenizer = AutoTokenizer.from_pretrained(model_id)
         load_kwargs = {
             "dtype": torch_dtype or self._default_dtype(),
@@ -114,6 +128,9 @@ class PrometheusEvaluator:
 
     def generate(self, prompt: str) -> str:
         messages = self.build_messages(prompt)
+        if self.api_base:
+            return self._generate_via_api(messages)
+
         model_input = self.tokenizer.apply_chat_template(
             messages,
             tokenize=False,
@@ -134,6 +151,40 @@ class PrometheusEvaluator:
             generated_tokens,
             skip_special_tokens=True,
         ).strip()
+
+    def _generate_via_api(self, messages: list[dict[str, str]]) -> str:
+        payload = {
+            "model": self.model_id,
+            "messages": messages,
+            "temperature": 0.0,
+            "max_tokens": self.max_new_tokens,
+        }
+        request = urllib.request.Request(
+            url=f"{self.api_base}/v1/chat/completions",
+            data=json.dumps(payload).encode("utf-8"),
+            headers={
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {self.api_key}",
+            },
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(request) as response:
+                body = json.loads(response.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            error_body = exc.read().decode("utf-8", errors="replace")
+            raise RuntimeError(
+                f"vLLM request failed with HTTP {exc.code}: {error_body}"
+            ) from exc
+        except urllib.error.URLError as exc:
+            raise RuntimeError(
+                f"Could not reach vLLM server at {self.api_base}: {exc}"
+            ) from exc
+
+        try:
+            return body["choices"][0]["message"]["content"].strip()
+        except (KeyError, IndexError, TypeError) as exc:
+            raise RuntimeError(f"Unexpected vLLM response: {body}") from exc
 
     def evaluate_domain(
         self,
