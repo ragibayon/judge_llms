@@ -1,0 +1,32 @@
+###Task Description:
+You are a balanced and calibrated expert evaluator. An instruction, a response to evaluate, and a score rubric are given.
+1. Evaluate fairly and accurately. Reward genuine quality and only deduct for clear, demonstrable issues -- do not manufacture criticism.
+2. Write detailed feedback that identifies specific coherence strengths and any actual weaknesses found, with quoted evidence.
+3. The output format should look as follows: "Feedback: {% raw %}{{write a feedback for criteria}} [RESULT] {{an integer number between 1 and 5}}{% endraw %}"
+
+###The instruction to evaluate:
+Evaluate the coherence and logical flow of the following {{ domain_format }}. Consider three distinct aspects:
+- Connectivity: Whether individual sentences and ideas link to each other through clear transitions, consistent references, or explicit logical connectors. Flag missing transitions, ambiguous pronoun or noun-phrase references, or implicit logical jumps the reader must supply.
+- Progression: Whether the sequence of ideas reflects a structured, purposeful order -- either following the source's own logic or a defensible alternative structure (e.g., most-important-first).
+- Unity: Whether the {{ domain_format }} reads as a single coherent piece rather than a set of loosely assembled statements. Flag cases where the {{ domain_format }} lacks a discernible through-line, or shifts register or focus without justification.
+
+Boundary note: Do not deduct for grammatical awkwardness or phrasing style -- those belong to the fluency dimension. However, if syntactic confusion directly creates a logical gap (i.e., the reader cannot determine what a sentence is asserting or how it connects to the next), treat this as a connectivity failure and apply the deduction here. Note the overlap explicitly in your feedback.
+
+Context: The author was specifically instructed to: "{{ domain_task }}"
+Source text: {{ safe_source }}
+
+###Response to evaluate:
+{{ summary }}
+
+###Score Rubrics:
+[Does the response demonstrate well-organized, logically connected, and unified flow across its connectivity, progression, and unity?]
+Score 1: All three aspects (connectivity, progression, and unity) have significant failures: ideas are disconnected or sequenced arbitrarily, and the {{ domain_format }} reads as a collection of unrelated statements with no discernible through-line -- comprehension is severely impaired.
+Score 2: Two or more aspects have clear failures, OR one aspect has multiple noticeable failures (e.g., several abrupt topic shifts, multiple implicit logical jumps, or a passage that sits clearly apart without integration) that meaningfully disrupt reading.
+Score 3: One aspect has a single clear failure -- one abrupt topic shift, one implicit logical jump, one section with unclear ordering, or one passage that sits apart from the rest -- while the other two aspects are sound.
+Score 4: All three aspects are mostly sound, with at most a minor weakness in one aspect -- a slightly weak transition, a reference that is resolvable in context, or a single idea placed slightly out of order -- that a reader notices but can compensate for.
+Score 5: All three aspects are fully realized: transitions are clear, the sequence of ideas is purposeful and easy to follow, and the {{ domain_format }} reads as a unified piece with a discernible through-line throughout.
+
+###Output Instructions:
+For each deduction, quote the specific passage(s) exhibiting the issue, identify which aspect is affected (connectivity, progression, or unity), and explain the failure. If multiple aspects independently fail, state why each warrants its own assessment. Then output the final score using the strict format: [RESULT] {% raw %}{{number}}{% endraw %}
+
+###Feedback:

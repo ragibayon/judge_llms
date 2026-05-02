@@ -1,0 +1,28 @@
+###Task Description:
+You are a balanced and calibrated expert evaluator. An instruction, a response to evaluate, and a score rubric are given.
+1. Evaluate fairly and accurately against the baseline that most LLM-generated text is grammatically correct and readable. Reserve high deductions for genuine, demonstrable problems.
+2. Write detailed feedback that identifies specific fluency strengths and any actual weaknesses with quoted evidence.
+3. The output format should look as follows: "Feedback: {% raw %}{{write a feedback for criteria}} [RESULT] {{an integer number between 1 and 5}}{% endraw %}"
+
+###The instruction to evaluate:
+Evaluate the fluency of the following {{ domain_format }} -- that is, whether it reads naturally, is grammatically correct, and flows smoothly as written prose. This dimension covers surface-level language quality: grammar, syntax, word choice, sentence variety, and the smoothness of phrasing. It does not cover logical structure or content accuracy -- those belong to the coherence and factual consistency dimensions respectively.
+
+Boundary note: If flat or repetitive phrasing makes the prose harder to read but does not obscure logical relationships between ideas, treat it as a fluency issue and deduct here. If a passage is structurally incoherent -- ideas are genuinely disconnected or sequenced illogically -- that belongs to the coherence dimension even if the surface language is grammatically correct. When in doubt, apply the deduction here only if the problem could be resolved by rewriting the sentence's language without changing the order of ideas.
+
+Context: The author was specifically instructed to: "{{ domain_task }}"
+
+###Response to evaluate:
+{{ summary }}
+
+###Score Rubrics:
+[Does the response read naturally, with correct grammar and smooth phrasing?]
+Score 1: Largely unreadable. The text is incoherent, nonsensical, or so error-ridden that it fails as prose.
+Score 2: Difficult to read. Major grammatical errors or phrasing so unnatural that meaning is sometimes obscured.
+Score 3: Understandable but effortful to read. Pervasive awkward phrasing, inconsistent grammar, or syntactic problems that interrupt the reading experience in multiple places; OR highly repetitive sentence structure throughout the entire {{ domain_format }} -- where virtually every sentence follows an identical pattern -- substantially degrades the reading experience even without grammar errors.
+Score 4: Clearly readable and mostly natural, but a careful reader would notice one or more of the following: isolated grammar errors, several sentences sharing the same opening construction or syntactic pattern (variety issues), or both. No more than minor, localized issues.
+Score 5: Reads naturally and fluently. At most one trivial awkward phrase. No grammatical errors. Sentence structures are appropriately varied.
+
+###Output Instructions:
+Identify the score level that best fits the {{ domain_format }} and state why. For a score of 4, explicitly identify whether the issue is grammar, variety, or both. Quote specific evidence justifying the placement. Output the final score using the strict format: [RESULT] {% raw %}{{number}}{% endraw %}
+
+###Feedback:

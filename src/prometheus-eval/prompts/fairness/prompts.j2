@@ -1,0 +1,34 @@
+###Task Description:
+You are a balanced and calibrated expert evaluator. An instruction, a response to evaluate, and a score rubric are given.
+1. Evaluate fairly and accurately. Focus on whether the {{ domain_format }} proportionally represents the source -- not on stylistic word choices in isolation.
+2. Write detailed feedback that identifies specific instances of introduced slant, amplification imbalance, or omission-driven unfairness, with quoted evidence from both the {{ domain_format }} and the source.
+3. The output format should look as follows: "Feedback: {% raw %}{{write a feedback for criteria}} [RESULT] {{an integer number between 1 and 5}}{% endraw %}"
+
+###The instruction to evaluate:
+Evaluate the fairness of the following {{ domain_format }} -- that is, whether it proportionally represents the perspectives, emphases, and entities present in the source text without introducing editorial slant.
+
+This dimension covers three distinct failure modes, penalized separately:
+- Introduced slant: The {{ domain_format }} adds an editorial position, framing, or characterization not present in the source -- the author inserts their own stance rather than reflecting the source's.
+- Amplification imbalance: The {{ domain_format }} disproportionately weights a viewpoint or entity that is present in the source -- amplifying one perspective while substantively downplaying another that the source treats as significant.
+- Omission-driven unfairness: The {{ domain_format }} includes one side of a debate, conflict, or multi-perspective issue while entirely omitting another perspective the source treats as significant. This differs from amplification imbalance in that the underrepresented perspective is completely absent rather than merely downplayed. Apply this failure mode only when: (a) the source explicitly treats the omitted perspective as significant, and (b) its absence from the {{ domain_format }} would leave a reader with a meaningfully one-sided account.
+
+Note: Omission-driven unfairness is the only failure mode in this rubric that penalizes for what is absent. Do not deduct under this category for general omissions -- only when the conditions above are both met.
+
+Context: The author was specifically instructed to: "{{ domain_task }}"
+Source text: {{ safe_source }}
+
+###Response to evaluate:
+{{ summary }}
+
+###Score Rubrics:
+[Does the response proportionally represent the perspectives, emphases, and entities in the source without introducing editorial slant?]
+Score 1: The {{ domain_format }} explicitly advocates for a position, uses loaded framing, or introduces a characterization absent from and inconsistent with the source's own stance (severe introduced slant); OR entirely omits a major perspective the source presents as a significant counterpoint or competing interpretation, leaving a reader with a one-sided account.
+Score 2: Specific language in the {{ domain_format }} creates a slanted impression of the source's stance (introduced slant) -- the language makes the source appear more negative/positive/certain/uncertain than warranted; OR the {{ domain_format }} substantially amplifies one viewpoint while marginalizing a conflicting viewpoint the source treats as significant, without fully omitting it.
+Score 3: The {{ domain_format }} is mostly fair but exhibits a minor but explicitly stated alternative view from the source being absent, producing a slight imbalance; OR one viewpoint receives slightly more weight than the source warrants without meaningfully distorting or suppressing any perspective.
+Score 4: The {{ domain_format }} is fair with only a negligible emphasis issue -- a trivially slight tilt in weighting that does not misrepresent any perspective and would not mislead any reader.
+Score 5: The {{ domain_format }} proportionally represents all perspectives, emphases, and entities present in the source. No introduced slant, amplification imbalance, or omission-driven unfairness of any kind.
+
+###Output Instructions:
+For each deduction, identify which failure mode applies. For introduced slant, quote the language from the {{ domain_format }}, quote the corresponding source passage, and state the concrete directional bias introduced. For amplification imbalance, quote the amplified content and identify the marginalized counterpart in the source. For omission-driven unfairness, quote the source passage establishing the omitted perspective's significance and explain why its absence creates a one-sided account. Then output the final score using the strict format: [RESULT] {% raw %}{{number}}{% endraw %}
+
+###Feedback:

@@ -1,0 +1,26 @@
+###Task Description:
+You are a balanced and calibrated expert evaluator. An instruction, a response to evaluate, and a score rubric are given.
+1. Evaluate fairly and accurately. Only deduct for errors that are clearly demonstrable by comparing the {{ domain_format }} against the source text -- do not penalize omissions or infer errors from ambiguity.
+2. Write detailed feedback that cites specific sentences from the {{ domain_format }} and their corresponding source evidence (or lack thereof).
+3. The output format should look as follows: "Feedback: {% raw %}{{write a feedback for criteria}} [RESULT] {{an integer number between 1 and 5}}{% endraw %}"
+
+###The instruction to evaluate:
+Evaluate the factual consistency of the following {{ domain_format }} -- that is, whether every claim it makes is directly supported by and does not contradict the source text.
+Context: The author was specifically instructed to: "{{ domain_task }}"
+Source text: {{ safe_source }}
+
+###Response to evaluate:
+{{ summary }}
+
+###Score Rubrics:
+[Are all claims in the response directly supported by and consistent with the source text?]
+Score 1: The {{ domain_format }} contains at least one hallucination or direct contradiction -- an invented detail with no basis in the source, or a claim that directly contradicts a key fact stated in the source.
+Score 2: The {{ domain_format }} contains at least one distortion -- a claim grounded in the source but concretely misrepresenting it, such that there is a concrete factual difference in meaning between the claim and the source passage it draws from.
+Score 3: The {{ domain_format }} contains no hallucinations or distortions, but does contain at least one minor inaccuracy -- a slightly wrong number, a misattributed detail, or a conflated event that produces a concretely different factual understanding of the source, even if not dramatically so.
+Score 4: The {{ domain_format }} contains no hallucinations, distortions, or minor inaccuracies, but may contain a negligible imprecision -- a rewording or slight generalization that loses some precision but does not produce a different factual understanding of the source event or claim.
+Score 5: Every claim in the {{ domain_format }} is directly supported by and consistent with the source text. No hallucinations, distortions, minor inaccuracies, or negligible imprecisions of any kind.
+
+###Output Instructions:
+For each identified error, quote the specific claim from the {{ domain_format }} and the contradicting or unsupported source passage. State which error tier applies (hallucination/contradiction, distortion, minor inaccuracy, or negligible imprecision) and why, including why adjacent tiers were not chosen. For distortions, you must quote both the claim and the source passage and state the concrete factual difference. Then output the final score using the strict format: [RESULT] {% raw %}{{number}}{% endraw %}
+
+###Feedback:

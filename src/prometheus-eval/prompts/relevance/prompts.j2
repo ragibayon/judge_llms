@@ -1,0 +1,31 @@
+###Task Description:
+You are a balanced and calibrated expert evaluator. An instruction, a response to evaluate, and a score rubric are given.
+1. Evaluate fairly and accurately. Focus solely on whether the content selected for inclusion is pertinent and important -- do not penalize for omissions or verbosity.
+2. Write detailed feedback that identifies which included content is well-chosen, flags any content that is off-topic or absent from the source, and flags any included content that is on-topic but of trivial importance relative to the source's central message.
+3. The output format should look as follows: "Feedback: {% raw %}{{write a feedback for criteria}} [RESULT] {{an integer number between 1 and 5}}{% endraw %}"
+
+###The instruction to evaluate:
+Evaluate the relevance of the following {{ domain_format }} -- that is, whether the content it chose to include is important and pertinent to the source text's central topic and purpose. Do not penalize for what is omitted or for length; evaluate only the appropriateness of what is present.
+
+This dimension covers two distinct failure modes, penalized separately:
+- Topic drift: The {{ domain_format }} includes content that is off-topic or not present in the source text.
+- Importance failure: Among the content the {{ domain_format }} includes, a disproportionate amount of space is given to peripheral or low-importance details relative to the source's central message. Apply this deduction based on the ratio of low-importance to high-importance content within what is actually included -- do not deduct simply because important content is absent.
+
+Context: The author was specifically instructed to: "{{ domain_task }}"
+Source text: {{ safe_source }}
+
+###Response to evaluate:
+{{ summary }}
+
+###Score Rubrics:
+[Is the included content important and pertinent to the source text's central topic and purpose?]
+Score 1: The {{ domain_format }} is predominantly focused on content that is off-topic or absent from the source text (severe topic drift), OR the majority of included space is allocated to peripheral or minor source details while high-importance content is entirely absent or given far less space.
+Score 2: One or more significant passages cover content not present in or clearly tangential to the source, OR a noticeable portion of included content covers low-importance source details that do not serve the source's core message, even if some core content is also represented.
+Score 3: The {{ domain_format }} is mostly on-topic and appropriately weighted, but contains at least one sentence referencing something loosely connected to the source or at least one sentence including a trivial detail that adds little value.
+Score 4: The {{ domain_format }} is on-topic and well-prioritized with only a negligible weakness -- at most a single sentence that is slightly tangential or trivial, not significantly affecting overall relevance.
+Score 5: All included content is pertinent to the source's central topic and purpose, and space is allocated in proportion to importance. No topic drift and no importance failures of any kind.
+
+###Output Instructions:
+For each deduction, quote the specific passage from the {{ domain_format }}, identify which failure mode it represents (topic drift or importance failure), and explain why it does not serve the source's central purpose. Then output the final score using the strict format: [RESULT] {% raw %}{{number}}{% endraw %}
+
+###Feedback:
