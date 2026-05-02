@@ -33,7 +33,7 @@ PROMPT_NAMES = (
     "relevance",
 )
 RESULT_RE = re.compile(
-    r"Feedback:\s*(.*?)\s*\[RESULT\]\s*([1-5])",
+    r"(?:Feedback:\s*)?(.*?)\s*\[RESULT\]\s*([1-5])",
     re.DOTALL,
 )
 
@@ -67,7 +67,9 @@ def parse_feedback_and_score(text: str) -> tuple[str, int | None]:
     match = RESULT_RE.search(text)
     if not match:
         return text.strip(), None
-    return match.group(1).strip(), int(match.group(2))
+    feedback = match.group(1).strip()
+    score = int(match.group(2))
+    return feedback, score
 
 
 class PrometheusEvaluator:

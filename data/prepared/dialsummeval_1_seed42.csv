@@ -1,0 +1,2 @@
+dataset,sample_id,source,reference,summary,system_id,human_scores_consistency,human_scores_relevance,human_scores_fluency,human_scores_coherence,sample_index,original_index
+dialsummeval,13862773,| Randolph: Honey | Randolph: Are you still in the pharmacy? | Maya: Yes | Randolph: Buy me some earplugs please | Maya: How many pairs? | Randolph: 4 or 5 packs | Maya: I'll get you 5 | Randolph: Thanks darling,,Maya will buy 5 pairs of earplugs for Randolph .,H,4.666666666666667,4.0,4.666666666666667,4.666666666666667,1,1309

@@ -1,0 +1,26 @@
+{
+    "id": "13611929",
+    "dialogue": "| Louis: Hey, hows your day? :D | Cheryl: Okaaay\u2026 I guess | Louis: Aha, someone\u2019s feeling a bit down, am I right? | Cheryl: yea, sort of\u2026 | Louis: Go on, tell me what happened | Cheryl: I\u2026just had an argument with my mom | Louis: Jesus what again | Cheryl: I forgot to close the window when I was leaving home! | Louis: And that\u2019s it? | Cheryl: No, not only\u2026 Ya know, wouldn\u2019t be that bad, but I got angry, started screaming and everything ;/ | Louis: not a good idea, babe | Cheryl: I knoooow \uf04c | Louis: Was it really bad?  | Cheryl: I suppose yea, she kicked me out xd | Louis: WHAT | Cheryl: I mean I don\u2019t have to move right now, but she gave me time till the end of the year | Louis: I\u2019m sorry\u2026 | Cheryl: Naah, don\u2019t be, I believe it\u2019s for good. I couldn\u2019t stand her anyway xD",
+    "summary": "Cheryl had an argument with her mom. She forgot to close the window when she was leaving home. She was kicked out. Louis is sorry.",
+    "annotations": [
+        {
+            "consistency": 3,
+            "relevance": 4,
+            "fluency": 4,
+            "coherence": 4
+        },
+        {
+            "consistency": 5,
+            "relevance": 4,
+            "fluency": 5,
+            "coherence": 4
+        },
+        {
+            "consistency": 3,
+            "relevance": 5,
+            "fluency": 5,
+            "coherence": 5
+        }
+    ],
+    "model_id": "N"
+}
