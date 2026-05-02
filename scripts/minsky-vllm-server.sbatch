@@ -26,7 +26,7 @@ apptainer exec \
     --nv \
     --bind "${HOME}:${HOME}" \
     "${CONTAINER}" \
-    python -m vllm.entrypoints.openai.api_server \
+    python3 -m vllm.entrypoints.openai.api_server \
         --model "${MODEL_ID}" \
         --host 0.0.0.0 \
         --port "${PORT}" \
