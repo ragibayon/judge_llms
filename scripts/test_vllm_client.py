@@ -2,6 +2,14 @@ import importlib.util
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+from rich.console import Console
+from rich.panel import Panel
+from rich.table import Table
+
+
+console = Console()
+
 
 def load_prometheus_module():
     module_path = Path(__file__).resolve().parent.parent / "src" / "prometheus-eval" / "prometheus-eval.py"
@@ -13,9 +21,11 @@ def load_prometheus_module():
 
 
 def main() -> None:
+    load_dotenv()
     api_base = os.getenv("PROMETHEUS_API_BASE", "http://127.0.0.1:8000")
     module = load_prometheus_module()
     evaluator = module.PrometheusEvaluator(api_base=api_base)
+    console.log(f"Using Prometheus API at {api_base}")
 
     source = (
         "The city council approved a $2 million park renovation plan. "
@@ -35,11 +45,21 @@ def main() -> None:
         domain_task=task,
     )
 
+    summary_table = Table(title="Prometheus Smoke Test Scores")
+    summary_table.add_column("Domain", style="cyan")
+    summary_table.add_column("Score", style="magenta")
+
     for name, result in results.items():
-        print(f"=== {name} ===")
-        print(f"score: {result.score}")
-        print(f"feedback: {result.feedback}")
-        print()
+        summary_table.add_row(name, str(result.score))
+        console.print(
+            Panel(
+                result.feedback or result.raw_output,
+                title=f"{name} | score={result.score}",
+                expand=False,
+            )
+        )
+
+    console.print(summary_table)
 
 
 if __name__ == "__main__":

@@ -10,6 +10,12 @@
 
 set -euo pipefail
 
+if [ -f "${SLURM_SUBMIT_DIR}/.env" ]; then
+    set -a
+    . "${SLURM_SUBMIT_DIR}/.env"
+    set +a
+fi
+
 CONTAINER="/opt/apptainer/images/vllm-openai-latest.sif"
 MODEL_ID="${MODEL_ID:-prometheus-eval/prometheus-7b-v2.0}"
 PORT="${PORT:-8000}"
@@ -25,6 +31,8 @@ echo "[$(date)] Host: $(hostname)"
 apptainer exec \
     --nv \
     --bind "${HOME}:${HOME}" \
+    --bind "${SLURM_SUBMIT_DIR}:${SLURM_SUBMIT_DIR}" \
+    --pwd "${SLURM_SUBMIT_DIR}" \
     "${CONTAINER}" \
     python3 -m vllm.entrypoints.openai.api_server \
         --model "${MODEL_ID}" \
